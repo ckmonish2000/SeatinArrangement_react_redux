@@ -23,4 +23,23 @@ const createStudent=async(name,roll,pass)=>{
 
 
 
-export {createStudent}
+const loginStudent=async ()=>{
+    try{
+        var val= await axios({
+            method:"post",
+            url:`${url}/studentLogin`,
+            data:{
+                username:"18sje922",
+                password:"123"
+            }
+        })
+        return val?.data
+
+    }catch(err){
+        console.log(err);
+    }
+
+}
+
+
+export {createStudent,loginStudent}
