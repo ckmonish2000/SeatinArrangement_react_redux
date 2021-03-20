@@ -4,7 +4,6 @@ var url=process.env.NODE_ENV==="development"?"http://localhost:5000":"";
 
 const createStudent=async(name,roll,pass)=>{
     try{
-        console.log(name,roll,pass);
         var  data=await axios({
             method:"post",
             url:`${url}/NewStudent`,
@@ -23,14 +22,14 @@ const createStudent=async(name,roll,pass)=>{
 
 
 
-const loginStudent=async ()=>{
+const loginStudent=async (rollno,password)=>{
     try{
         var val= await axios({
             method:"post",
             url:`${url}/studentLogin`,
             data:{
-                username:"18sje922",
-                password:"123"
+                username:rollno,
+                password:password
             }
         })
         return val?.data

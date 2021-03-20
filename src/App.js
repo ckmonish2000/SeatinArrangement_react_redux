@@ -9,7 +9,7 @@ import TeacherSignup from "./TeachersSignup/TeachersSignup"
 import StudentsSignup from "./StudentsSignup/StudentsSignup"
 import Home from "./Home/Home";
 
-console.log(process.env.NODE_ENV);
+
 function App() {
  
   return (

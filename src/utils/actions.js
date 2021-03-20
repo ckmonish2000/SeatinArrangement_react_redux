@@ -1,14 +1,17 @@
 // actions for signup
-const SignupNameChange=(val)=>{return {type:"Name",payload:val}}
-const SignupPasswordChange=(val)=>{return {type:"Password",payload:val}}
-const SignupRollNoChange=(val)=>{return {type:"RollNo",payload:val}}
+const NameChange=(val)=>{return {type:"Name",payload:val}}
+const PasswordChange=(val)=>{return {type:"Password",payload:val}}
+const RollNoChange=(val)=>{return {type:"RollNo",payload:val}}
 
 
-
+const LoginNameChange=(val)=>{return {type:"rollno",payload:val}}
+const LoginPasswordChange=(val)=>{return {type:"Password",payload:val}}
 
 
 export {
-    SignupNameChange,
-    SignupRollNoChange,
-    SignupPasswordChange
+    NameChange,
+    RollNoChange,
+    PasswordChange,
+    LoginPasswordChange,
+    LoginNameChange
 }

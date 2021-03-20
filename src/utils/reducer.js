@@ -8,4 +8,16 @@ const SignupReducer=(state={name:"",password:"",rollno:""},action)=>{
 }
 
 
-export {SignupReducer}
+const LoginRedcerStudents=(state={StudentRollno:"",Studentpassword:""},action)=>{
+    switch (action.type) {
+        case "rollno":
+            return {...state,StudentRollno:action.payload}
+        case "Password":
+            return {...state,Studentpassword:action.payload}
+        default:
+            return state;
+    }
+}
+
+
+export {SignupReducer,LoginRedcerStudents}

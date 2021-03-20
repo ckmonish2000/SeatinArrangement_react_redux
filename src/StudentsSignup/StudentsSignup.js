@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import {createStudent} from "../services/services"
-import {SignupNameChange,SignupRollNoChange,SignupPasswordChange} from "../utils/actions"
+import {NameChange,RollNoChange,PasswordChange} from "../utils/actions"
 import {useDispatch,useSelector} from "react-redux"
 import {useHistory} from "react-router-dom"
 
@@ -30,9 +30,9 @@ export default function StudentsSignup() {
 
     return (
         <div>
-            <input type="text" onChange={(e)=>dispatch(SignupNameChange(e.target.value))} placeholder="student name"/>
-            <input type="password" onChange={(e)=>dispatch(SignupPasswordChange(e.target.value))} placeholder="password"/>
-            <input type="Rollno" onChange={(e)=>dispatch(SignupRollNoChange(e.target.value))} placeholder="Rollno"/>
+            <input type="text" onChange={(e)=>dispatch(NameChange(e.target.value))} placeholder="student name"/>
+            <input type="password" onChange={(e)=>dispatch(PasswordChange(e.target.value))} placeholder="password"/>
+            <input type="Rollno" onChange={(e)=>dispatch(RollNoChange(e.target.value))} placeholder="Rollno"/>
             <button onClick={handleSubmit}>submit</button>
         </div>
     )
