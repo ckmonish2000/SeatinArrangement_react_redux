@@ -2,15 +2,16 @@ import axios from "axios"
 
 var url=process.env.NODE_ENV==="development"?"http://localhost:5000":"";
 
-const createStudent=async()=>{
+const createStudent=async(name,roll,pass)=>{
     try{
+        console.log(name,roll,pass);
         var  data=await axios({
             method:"post",
             url:`${url}/NewStudent`,
             data:{
-                roll:"19sje902",
-                pass:"123",
-                name:"shadow moon"
+                roll:roll,
+                pass:pass,
+                name:name
             }
             
         })

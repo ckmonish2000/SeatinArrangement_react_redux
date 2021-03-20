@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import {Provider} from "react-redux"
 import {createStore,combineReducers} from "redux"
-import {Reducer} from "./utils/reducer"
+import {SignupReducer} from "./utils/reducer"
 import {BrowserRouter} from "react-router-dom"
 
-const store=createStore(Reducer)
+
+const allReducer=combineReducers({
+  SignupReducer
+})
+
+const store=createStore(allReducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(
   <Provider store={store}>
