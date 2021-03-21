@@ -3,7 +3,7 @@ import Header from './header'
 import Modal from './Modal'
 import {getAllSeating,DeleteSeating} from "../services/services"
 import {Table,Button, message} from "antd";
-
+import {DeleteOutlined } from "@ant-design/icons"
 export default function UploadSeating(props) {
     var user=props.location.state?.TID
     const [AllSeatingData, setAllSeatingData] = useState([])
@@ -60,7 +60,7 @@ export default function UploadSeating(props) {
           {
             title: '',
             dataIndex: 'floor',
-            render:(floor,val)=><Button onClick={()=>DeleteRecord(val.RollNo)}>Delete</Button>,
+            render:(floor,val)=><span className="delBtn" onClick={()=>DeleteRecord(val.RollNo)}><DeleteOutlined /></span >,
             key: 'classRoom',
           }
       ];
