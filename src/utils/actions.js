@@ -7,9 +7,17 @@ const RollNoChange=(val)=>{return {type:"RollNo",payload:val}}
 const LoginNameChange=(val)=>{return {type:"rollno",payload:val}}
 const LoginPasswordChange=(val)=>{return {type:"Password",payload:val}}
 
+
+
+// acions for teachers
 const TeacherNameChange=(val)=>{return {type:"TNames",payload:val}}
 const TeacherPasswordChange=(val)=>{return {type:"TPassword",payload:val}}
 const TeacherIdChange=(val)=>{return {type:"TID",payload:val}}
+
+
+
+const LoginTeacherId=(val)=>{return {type:"LoginTID",payload:val}}
+const LoginTeacherPassword=(val)=>{return {type:"Tpass",payload:val}}
 
 
 
@@ -21,5 +29,7 @@ export {
     LoginNameChange,
    TeacherPasswordChange,
    TeacherNameChange,
-   TeacherIdChange
+   TeacherIdChange,
+   LoginTeacherId,
+   LoginTeacherPassword
 }
