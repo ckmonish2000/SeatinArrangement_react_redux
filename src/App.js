@@ -8,7 +8,7 @@ import Studentogin from "./Studentlogin/Studentogin";
 import TeacherSignup from "./TeachersSignup/TeachersSignup"
 import StudentsSignup from "./StudentsSignup/StudentsSignup"
 import Home from "./Home/Home";
-
+import 'antd/dist/antd.css'; 
 
 function App() {
  

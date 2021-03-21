@@ -2,6 +2,8 @@ import React from 'react'
 import {useDispatch,useSelector} from "react-redux"
 import { LoginTeacherId,LoginTeacherPassword} from "../utils/actions"
 import {TeacherLoginService} from "../services/services"
+import {message,Input,Button} from "antd"
+import "../styles/Loginstyle.css"
 export default function TeacherLogin() {
     const dispatch = useDispatch();
     const state = useSelector(state => state.LoginTeacher)
@@ -13,27 +15,31 @@ export default function TeacherLogin() {
         var val=await TeacherLoginService(state.LoginTID,state.LoginPass);
         if(val?.loggedin){
             localStorage.setItem("TeacherToken",val?.token)
-            alert("loggedin as teacher");
+            message.success("loggedin as teacher");
 
         }
         else{
-            alert(val?.message)
+            message.error(val?.message)
         }
        }else{
-           alert("fill in the required details")
+           message.warning("fill in the required details")
        }
     }
     return (
-        <div>
-            t login
+        <div className="parentLogin">
+            <h1 className="head">Teacher Login</h1>
             <br/>
             
-            <input placeholder="TeacherId"  value={state.LoginTID} onChange={handleTIDChange} type="text"/>
-            <input placeholder="Password" value={state.LoginPass} onChange={handlePassChange} type="password"/>
-            <button onClick={handleSubmit}>submit</button>
+            <Input placeholder="TeacherId"  value={state.LoginTID} onChange={handleTIDChange} type="text"/>
             <br/>
-            <a href="/TeacherSignup">signup</a>
-
+            <Input placeholder="Password" value={state.LoginPass} onChange={handlePassChange} type="password"/>
+            <br/>
+            <div>
+            <a href="/TeacherSignup">Don't have a account? Signup</a>
+            <Button className="LoginBtn" onClick={handleSubmit}>Login</Button>
+            
+           
+            </div>
         </div>
     )
 }

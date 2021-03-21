@@ -1,0 +1,18 @@
+.parentLogin{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 500pt;
+    height: 200pt;
+    margin: auto;
+}
+
+
+.head{
+    text-align: center;
+}
+
+.LoginBtn{
+    width: 150pt;
+    margin-left: 42.2%;
+}
