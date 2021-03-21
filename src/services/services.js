@@ -60,14 +60,14 @@ const CreateNewTeacher=async(id,password,name)=>{
 }
 
 
-const TeacherLogin=async(TID="",password="")=>{
+const TeacherLoginService=async(TID="",password="")=>{
    try{
-    var val=axios({
+    var val=await axios({
         method:"post",
         url:`${url}/teacherLogin`,
         data:{
-            username:"123",
-            password:"123"
+            username:TID,
+            password:password
         }
     })
     return val?.data
@@ -77,4 +77,4 @@ const TeacherLogin=async(TID="",password="")=>{
 }
 
 
-export {createStudent,loginStudent,CreateNewTeacher,TeacherLogin}
+export {createStudent,loginStudent,CreateNewTeacher,TeacherLoginService}
