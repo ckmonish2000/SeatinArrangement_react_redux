@@ -4,19 +4,21 @@ import { LoginTeacherId,LoginTeacherPassword} from "../utils/actions"
 import {TeacherLoginService} from "../services/services"
 import {message,Input,Button} from "antd"
 import "../styles/Loginstyle.css"
+import {useHistory} from "react-router-dom"
+
 export default function TeacherLogin() {
     const dispatch = useDispatch();
     const state = useSelector(state => state.LoginTeacher)
     const handleTIDChange=(e)=>{dispatch(LoginTeacherId(e.target.value))}
     const handlePassChange=(e)=>{dispatch(LoginTeacherPassword(e.target.value))}
-
+    var history=useHistory();
     const handleSubmit=async()=>{
        if(state.LoginTID!=="" && state.LoginPass!==""){
         var val=await TeacherLoginService(state.LoginTID,state.LoginPass);
         if(val?.loggedin){
             localStorage.setItem("TeacherToken",val?.token)
             message.success("loggedin as teacher");
-
+            history.push({pathname:"/upload"})
         }
         else{
             message.error(val?.message)
