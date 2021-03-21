@@ -5,7 +5,7 @@ import {CloseNewModal,ModalSClass,ModalSRollno,ModalSName,ModalSFloor,ModalSExam
 import "../styles/Modal.css"
 import {NewSeating} from "../services/services"
 
-export default function Modal() {
+export default function Modal({refresh}) {
     const state = useSelector(state => state.OpenNewModal)
     const state2 = useSelector(state => state.ModalValues)
     const dispatch = useDispatch();
@@ -28,10 +28,11 @@ export default function Modal() {
     const handleClassChange=(e)=>dispatch(ModalSClass(e.target.value))
     const handleExamTitleChange=(e)=>dispatch(ModalSExam(e.target.value))
     const handleOk=async()=>{
-        if(state2.Modalname!=="" && state2.ModalRollno!=="" && state2.ModalClass!=="" && state2.ModalFloor!==0 && state2.ModalExam!==""  ){
+        if(state2.Modalname!=="" && state2.ModalRollno!=="" && state2.ModalClass!=="" && state2.ModalExam!==""  ){
             var val=await NewSeating(state2.Modalname,state2.ModalRollno,state2.ModalClass,state2.ModalFloor,state2.ModalExam);
             if(val?.Seating_created){
                 message.success(`Uploaded record of ${state2.ModalRollno} for ${state2.ModalExam}`)
+                refresh();
                 handlecancel()
             }else{
                 message.error("records alredy exsist")

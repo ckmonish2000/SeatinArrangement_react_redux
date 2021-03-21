@@ -100,4 +100,38 @@ const NewSeating=async(name,roll,classR,floor,exam)=>{
 
 }
 
-export {createStudent,loginStudent,CreateNewTeacher,TeacherLoginService,NewSeating}
+const getAllSeating=async()=>{
+    var token=localStorage.getItem("TeacherToken")
+    try{
+        var val=await axios.get(`${url}/getAllSeating?token=${token}`)
+
+        return val?.data;
+    }catch(err){
+
+        return err
+    }
+}
+
+
+const DeleteSeating=async(rollno)=>{
+    var token=localStorage.getItem("TeacherToken")
+    try{
+        var val=await axios({
+            method:"post",
+            url:`${url}/deleteSeat?token=${token}`,
+            data:{
+                RollNo:rollno
+            }
+        })
+
+        return val?.data;
+    }catch(err){
+
+        return err
+    }
+
+}
+
+
+
+export {createStudent,loginStudent,CreateNewTeacher,TeacherLoginService,NewSeating,getAllSeating,DeleteSeating}
