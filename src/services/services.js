@@ -77,4 +77,27 @@ const TeacherLoginService=async(TID="",password="")=>{
 }
 
 
-export {createStudent,loginStudent,CreateNewTeacher,TeacherLoginService}
+const NewSeating=async(name,roll,classR,floor,exam)=>{
+    var token=localStorage.getItem("TeacherToken")
+    try{
+        var val=await axios({
+            method:"post",
+            url:`${url}/newSeating?token=${token}`,
+            data:{
+                StudentName:name,
+                RollNo:roll,
+                classRoom:classR,
+                floor:floor,
+                exam:exam
+            }
+        })
+
+        return val?.data;
+    }catch(err){
+
+        return err
+    }
+
+}
+
+export {createStudent,loginStudent,CreateNewTeacher,TeacherLoginService,NewSeating}
