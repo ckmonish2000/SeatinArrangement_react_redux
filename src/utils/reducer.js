@@ -20,4 +20,20 @@ const LoginRedcerStudents=(state={StudentRollno:"",Studentpassword:""},action)=>
 }
 
 
-export {SignupReducer,LoginRedcerStudents}
+
+
+const TeacherSignup=(state={TeacherId:"",TeacherName:"",Teacherpassword:""},action)=>{
+    switch (action.type) {
+        case "TNames":
+            return {...state,TeacherName:action.payload} 
+        case "TPassword":
+            return {...state,Teacherpassword:action.payload} 
+        case "TID":
+            return {...state,TeacherId:action.payload} 
+    
+        default:
+            return state;
+    }
+}
+
+export {SignupReducer,LoginRedcerStudents,TeacherSignup}

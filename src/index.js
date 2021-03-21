@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import {Provider} from "react-redux"
 import {createStore,combineReducers} from "redux"
-import {SignupReducer,LoginRedcerStudents} from "./utils/reducer"
+import {SignupReducer,LoginRedcerStudents,TeacherSignup} from "./utils/reducer"
 import {BrowserRouter} from "react-router-dom"
 
 
 const allReducer=combineReducers({
   SignupReducer,
-  LoginRedcerStudents
+  LoginRedcerStudents,
+  TeacherSignup
 
 })
 

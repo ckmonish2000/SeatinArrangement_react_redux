@@ -41,4 +41,23 @@ const loginStudent=async (rollno,password)=>{
 }
 
 
-export {createStudent,loginStudent}
+const CreateNewTeacher=async(id,password,name)=>{
+    try{
+        var val=await axios({
+            method:"post",
+            url:`${url}/NewTeacher`,
+            data:{
+                roll:id,
+                name:name,
+                pass:password
+            }
+        })
+        return val?.data
+    }catch(err){
+        return err
+    }
+
+}
+
+
+export {createStudent,loginStudent,CreateNewTeacher}

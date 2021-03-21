@@ -14,7 +14,7 @@ export default function Studentogin() {
     const login=async ()=>{
         var val=await loginStudent(state.StudentRollno,state.Studentpassword);
         if(val?.loggedin){
-            localStorage.setItem("TOKEN",val?.token)
+            localStorage.setItem("StudentTOKEN",val?.token)
             alert("logged in")
         }
         else{
