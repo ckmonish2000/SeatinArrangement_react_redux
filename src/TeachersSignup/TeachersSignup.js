@@ -31,7 +31,7 @@ export default function TeachersSignup() {
     }
     return (
         <div className="parentLogin" style={{marginTop:"50pt"}}>
-            <h1 className="head">Teacher Signup</h1>
+            <h1 className="head">Admin Signup</h1>
             <br/>
             
             <Input placeholder="TeacherId"  value={state.TeacherId} onChange={HandleTidchange} type="text"/>

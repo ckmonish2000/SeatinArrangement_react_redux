@@ -1,0 +1,22 @@
+.HeadParent{
+    padding: 10pt;
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px black;
+    display:flex;
+}
+
+
+.userBtn{
+    margin-left: auto;
+    margin-right: 20pt;
+    padding: 10pt;
+    padding-bottom: 30pt;
+    border-radius: 50%;
+    
+}
+
+.userBtn:hover{
+    border-color: #ffc75f;
+    color: #ffc75f;
+}

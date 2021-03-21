@@ -17,7 +17,7 @@ export default function TeacherLogin() {
         var val=await TeacherLoginService(state.LoginTID,state.LoginPass);
         if(val?.loggedin){
             localStorage.setItem("TeacherToken",val?.token)
-            message.success("loggedin as teacher");
+            message.success(`loggedin as teacher ${state.LoginTID}`);
             history.push({pathname:"/upload"})
         }
         else{
@@ -29,7 +29,7 @@ export default function TeacherLogin() {
     }
     return (
         <div className="parentLogin" >
-            <h1 className="head">Teacher Login</h1>
+            <h1 className="head">Admin Login</h1>
             <br/>
             
             <Input placeholder="TeacherId"  value={state.LoginTID} onChange={handleTIDChange} type="text"/>
