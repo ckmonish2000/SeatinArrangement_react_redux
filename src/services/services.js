@@ -60,4 +60,21 @@ const CreateNewTeacher=async(id,password,name)=>{
 }
 
 
-export {createStudent,loginStudent,CreateNewTeacher}
+const TeacherLogin=async(TID="",password="")=>{
+   try{
+    var val=axios({
+        method:"post",
+        url:`${url}/teacherLogin`,
+        data:{
+            username:"123",
+            password:"123"
+        }
+    })
+    return val?.data
+   }catch(err){
+       return err
+   }
+}
+
+
+export {createStudent,loginStudent,CreateNewTeacher,TeacherLogin}

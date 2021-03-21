@@ -7,6 +7,7 @@ export default function TeacherLogin() {
     const state = useSelector(state => state.LoginTeacher)
     const handleTIDChange=(e)=>{dispatch(LoginTeacherId(e.target.value))}
     const handlePassChange=(e)=>{dispatch(LoginTeacherPassword(e.target.value))}
+    
     return (
         <div>
             t login
