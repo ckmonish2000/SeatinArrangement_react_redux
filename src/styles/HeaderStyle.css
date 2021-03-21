@@ -11,8 +11,14 @@
     margin-left: auto;
     margin-right: 20pt;
     padding: 10pt;
-    padding-bottom: 30pt;
+    /* padding-bottom: 30pt; */
     border-radius: 50%;
+    width: fit-content;
+    height: 50pt;
+    color: #40a9ff;
+    background: #fff;
+    border-color: #40a9ff;
+    opacity: 0.6;
     
 }
 

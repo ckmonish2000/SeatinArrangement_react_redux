@@ -49,4 +49,13 @@ const LoginTeacher=(state={LoginTID:"",LoginPass:""},action)=>{
     }
 }
 
-export {SignupReducer,LoginRedcerStudents,TeacherSignup,LoginTeacher}
+
+const OpenNewModal=(state=false,action)=>{
+    switch (action.type) {
+        case "open":return true;
+        case "close":return false;
+        default: return state;
+    }
+}
+
+export {SignupReducer,LoginRedcerStudents,TeacherSignup,LoginTeacher,OpenNewModal}

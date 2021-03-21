@@ -1,11 +1,12 @@
 import React from 'react'
 import Header from './header'
 
-export default function UploadSeating() {
+export default function UploadSeating(props) {
+    var user=props.location.state?.TID
     return (
         <div>
-            <Header/>
-            this is  upload
+            <Header user={user} />
+            
         </div>
     )
 }

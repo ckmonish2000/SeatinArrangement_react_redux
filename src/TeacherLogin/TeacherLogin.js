@@ -18,7 +18,7 @@ export default function TeacherLogin() {
         if(val?.loggedin){
             localStorage.setItem("TeacherToken",val?.token)
             message.success(`loggedin as teacher ${state.LoginTID}`);
-            history.push({pathname:"/upload"})
+            history.push({pathname:"/upload",state:{TID:state.LoginTID}})
         }
         else{
             message.error(val?.message)

@@ -20,6 +20,9 @@ const LoginTeacherId=(val)=>{return {type:"LoginTID",payload:val}}
 const LoginTeacherPassword=(val)=>{return {type:"Tpass",payload:val}}
 
 
+const NewModal=()=>{return {type:"open"}}
+const CloseNewModal=()=>{return {type:"close"}}
+
 
 export {
     NameChange,
@@ -31,5 +34,7 @@ export {
    TeacherNameChange,
    TeacherIdChange,
    LoginTeacherId,
-   LoginTeacherPassword
+   LoginTeacherPassword,
+   NewModal,
+   CloseNewModal
 }
