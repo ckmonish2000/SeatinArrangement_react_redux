@@ -24,6 +24,12 @@ const NewModal=()=>{return {type:"open"}}
 const CloseNewModal=()=>{return {type:"close"}}
 
 
+const ModalSName=(val)=>{return {type:"ModalName",payload:val}}
+const ModalSRollno=(val)=>{return {type:"ModalRollNo",payload:val}}
+const ModalSExam=(val)=>{return {type:"ModalExam",payload:val}}
+const ModalSFloor=(val)=>{return {type:"ModalFloor",payload:val}}
+const ModalSClass=(val)=>{return {type:"ModalClass",payload:val}}
+
 export {
     NameChange,
     RollNoChange,
@@ -36,5 +42,10 @@ export {
    LoginTeacherId,
    LoginTeacherPassword,
    NewModal,
-   CloseNewModal
+   CloseNewModal,
+   ModalSClass,
+   ModalSRollno,
+   ModalSName,
+   ModalSFloor,
+   ModalSExam
 }

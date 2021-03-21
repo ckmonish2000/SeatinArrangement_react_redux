@@ -58,4 +58,22 @@ const OpenNewModal=(state=false,action)=>{
     }
 }
 
-export {SignupReducer,LoginRedcerStudents,TeacherSignup,LoginTeacher,OpenNewModal}
+const ModalValues=(state={Modalname:"",ModalRollno:"",ModalExam:"",ModalClass:"",ModalFloor:0},action)=>{
+switch (action.type) {
+    case "ModalName" :
+        return {...state,Modalname:action.payload}        
+    case "ModalRollNo":
+        return {...state,ModalRollno:action.payload}        
+    case "ModalExam":
+        return {...state,ModalExam:action.payload}        
+    case "ModalFloor":
+        return {...state,ModalFloor:action.payload}        
+    case "ModalClass":
+        return {...state,ModalClass:action.payload}        
+    default:
+        return state;
+}
+}
+
+
+export {SignupReducer,LoginRedcerStudents,TeacherSignup,LoginTeacher,OpenNewModal,ModalValues}
