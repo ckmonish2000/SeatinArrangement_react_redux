@@ -3,6 +3,7 @@ import { TeacherPasswordChange,TeacherNameChange,TeacherIdChange} from "../utils
 import {useDispatch,useSelector} from "react-redux"
 import {CreateNewTeacher} from "../services/services"
 import {useHistory} from "react-router-dom"
+import {message,Input,Button} from "antd"
 
 export default function TeachersSignup() {
     const history=useHistory();
@@ -18,25 +19,31 @@ export default function TeachersSignup() {
         if(state.TeacherId!=="" && state.TeacherName!=="" && state.Teacherpassword.length>=3){
             var val=await CreateNewTeacher(state.TeacherId,state.Teacherpassword,state.TeacherName)
             if(val?.Created){
-                alert("Teacher Created")
+                message.success("Teacher Created")
                 history.push({pathname:"/TeacherLogin"})
             }else{
-                alert("not created")
+                message.warning("Please Enter a unique TeacherId")
             }
         }else{
-            alert("fill in all values")
+            message.error("Please don't leave fields empty")
         }
 
     }
     return (
-        <div>
-            T signup
+        <div className="parentLogin" style={{marginTop:"50pt"}}>
+            <h1 className="head">Teacher Signup</h1>
             <br/>
             
-            <input placeholder="TeacherId"  value={state.TeacherId} onChange={HandleTidchange} type="text"/>
-            <input placeholder="Password" value={state.Teacherpassword} onChange={HandlePasswordchange} type="password"/>
-            <input placeholder="Teacher name" value={state.TeacherName} onChange={HandleNamechange} type="text"/>
-            <button onClick={handleSubmit}>create</button>
+            <Input placeholder="TeacherId"  value={state.TeacherId} onChange={HandleTidchange} type="text"/>
+            <br/>
+            <Input placeholder="Password" value={state.Teacherpassword} onChange={HandlePasswordchange} type="password"/>
+            <br/>
+            <Input placeholder="Teacher name" value={state.TeacherName} onChange={HandleNamechange} type="text"/>
+            <br/>
+            
+
+            <Button  style={{marginLeft:"auto"}} onClick={handleSubmit}>create account</Button>
+            
         </div>
     )
 }

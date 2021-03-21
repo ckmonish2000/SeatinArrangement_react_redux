@@ -26,7 +26,7 @@ export default function TeacherLogin() {
        }
     }
     return (
-        <div className="parentLogin">
+        <div className="parentLogin" >
             <h1 className="head">Teacher Login</h1>
             <br/>
             
