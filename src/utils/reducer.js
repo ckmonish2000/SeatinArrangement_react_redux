@@ -76,4 +76,23 @@ switch (action.type) {
 }
 
 
-export {SignupReducer,LoginRedcerStudents,TeacherSignup,LoginTeacher,OpenNewModal,ModalValues}
+const UpdateSearch=(state="",action)=>{
+    switch (action.type) {
+        case "Search":
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
+const UpdateSearchResult=(state=[],action)=>{
+    switch (action.type) {
+        case "SearchResult":
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
+
+export {SignupReducer,LoginRedcerStudents,TeacherSignup,LoginTeacher,OpenNewModal,ModalValues,UpdateSearch,UpdateSearchResult}

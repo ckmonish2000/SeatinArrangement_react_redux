@@ -30,6 +30,9 @@ const ModalSExam=(val)=>{return {type:"ModalExam",payload:val}}
 const ModalSFloor=(val)=>{return {type:"ModalFloor",payload:val}}
 const ModalSClass=(val)=>{return {type:"ModalClass",payload:val}}
 
+
+const SearchVal=(val)=>{return {type:"Search",payload:val}}
+const resultVal=(val)=>{return {type:"SearchResult",payload:val}}
 export {
     NameChange,
     RollNoChange,
@@ -47,5 +50,7 @@ export {
    ModalSRollno,
    ModalSName,
    ModalSFloor,
-   ModalSExam
+   ModalSExam,
+   SearchVal,
+   resultVal
 }

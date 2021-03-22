@@ -4,9 +4,11 @@ import {LoginRedcerStudents} from "../utils/reducer"
 import { LoginPasswordChange,LoginNameChange} from "../utils/actions"
 import {useDispatch,useSelector} from "react-redux"
 import {message,Input,Button} from "antd"
+import {useHistory} from "react-router-dom"
 
 export default function Studentogin() {
     const dispatch = useDispatch()
+    const history=useHistory()
     const state = useSelector(state => state.LoginRedcerStudents)
     // event handlers
     const Rollnohandler=(e)=>{dispatch(LoginNameChange(e.target.value))}
@@ -18,6 +20,7 @@ export default function Studentogin() {
         if(val?.loggedin){
             localStorage.setItem("StudentTOKEN",val?.token)
             message.success(`Welcome ${state.StudentRollno}`)
+            history.push({pathname:"/view",state:{id:state.StudentRollno}})
         }
         else{
             message.error(val?.message)

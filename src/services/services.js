@@ -133,5 +133,20 @@ const DeleteSeating=async(rollno)=>{
 }
 
 
+const getSeating=async(rollno,exam)=>{
 
-export {createStudent,loginStudent,CreateNewTeacher,TeacherLoginService,NewSeating,getAllSeating,DeleteSeating}
+   
+
+    var token=localStorage.getItem("StudentTOKEN")
+    try{
+        var val=await axios.get(`${url}/getStudentSeating?token=${token}&RollNo=${rollno}&exam=${exam}`)
+
+        return JSON.parse(val.data?.data);
+    }catch(err){
+
+        return err
+    }
+}
+
+
+export {createStudent,loginStudent,CreateNewTeacher,TeacherLoginService,NewSeating,getAllSeating,DeleteSeating,getSeating}

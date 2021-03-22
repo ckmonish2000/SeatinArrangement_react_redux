@@ -10,7 +10,9 @@ import StudentsSignup from "./StudentsSignup/StudentsSignup"
 import Home from "./Home/Home";
 import 'antd/dist/antd.css'; 
 import TProtectedRoute from "./utils/Tprotected"
+import SProtectedRoute from "./utils/SProtected"
 import UploadSeating from "./UploadSeating/UploadSeating";
+import ViewSeating from "./ViewSeating/ViewSeating";
 function App() {
  
   return (
@@ -22,6 +24,7 @@ function App() {
        <Route path="/TeacherLogin" component={TeacherLogin} exact/>
        <Route path="/StudentLogin" component={Studentogin} exact/>
       <TProtectedRoute path="/upload" component={UploadSeating} exact/>
+      <SProtectedRoute path="/View" component={ViewSeating} exact/>
      </Switch>
    </main>
   );
