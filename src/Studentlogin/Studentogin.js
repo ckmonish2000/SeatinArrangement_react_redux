@@ -5,7 +5,7 @@ import { LoginPasswordChange,LoginNameChange} from "../utils/actions"
 import {useDispatch,useSelector} from "react-redux"
 import {message,Input,Button} from "antd"
 import {useHistory} from "react-router-dom"
-
+import {backgroundstyle} from "../styles/styles"
 export default function Studentogin() {
     const dispatch = useDispatch()
     const history=useHistory()
@@ -30,17 +30,19 @@ export default function Studentogin() {
       }
     }
     return (
-        <div className="parentLogin" style={{marginTop:"50pt"}}>
+        <div style={backgroundstyle}>
+        <div className="parentLogin" >
             <h1 className="head">Student's Login</h1>
             <br/>
             <Input type="text" onChange={Rollnohandler} placeholder="Rollno"/>
             <br/>
             <Input type="password" onChange={passwordhandler} placeholder="password"/>
             <br/>
-            <div>
-            <a href="/StudentsSignup">Don't have a account? Signup</a>
+            <div className="flexParent">
+            <a href="/StudentsSignup"  className="inlineTxt">Don't have a account? </a>
             <Button className="LoginBtn" onClick={login}>Login Student</Button>
             </div>
+        </div>
         </div>
     )
 }

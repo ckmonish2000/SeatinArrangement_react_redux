@@ -1,0 +1,2 @@
+import BackGround from "../assets/download.jpg"
+export const backgroundstyle={backgroundImage:`url(${BackGround})`, backgroundRepeat:"no-repeat",backgroundSize:"cover",height:"100vh",width:"100vw",display:"flex"}

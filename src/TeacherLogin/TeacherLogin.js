@@ -5,6 +5,7 @@ import {TeacherLoginService} from "../services/services"
 import {message,Input,Button} from "antd"
 import "../styles/Loginstyle.css"
 import {useHistory} from "react-router-dom"
+import {backgroundstyle} from "../styles/styles"
 
 export default function TeacherLogin() {
     const dispatch = useDispatch();
@@ -28,7 +29,8 @@ export default function TeacherLogin() {
        }
     }
     return (
-        <div className="parentLogin" >
+      <div style={backgroundstyle}>
+      <div className="parentLogin" style={{marginTop:"25vh"}}>
             <h1 className="head">Admin Login</h1>
             <br/>
             
@@ -36,12 +38,13 @@ export default function TeacherLogin() {
             <br/>
             <Input placeholder="Password" value={state.LoginPass} onChange={handlePassChange} type="password"/>
             <br/>
-            <div>
-            <a href="/TeacherSignup">Don't have a account? Signup</a>
+            <div  className="flexParent">
+            <a href="/TeacherSignup" className="inlineTxt">Don't have a account?</a>
             <Button className="LoginBtn" onClick={handleSubmit}>Login</Button>
             
            
             </div>
+        </div>
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import axios from "axios"
 
-var url=process.env.NODE_ENV==="development"?"http://localhost:5000":"";
+var url=process.env.NODE_ENV==="development"?"http://localhost:80":"";
 
 const createStudent=async(name,roll,pass)=>{
     try{
