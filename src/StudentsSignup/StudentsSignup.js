@@ -4,6 +4,7 @@ import {NameChange,RollNoChange,PasswordChange} from "../utils/actions"
 import {useDispatch,useSelector} from "react-redux"
 import {useHistory} from "react-router-dom"
 import {message,Input,Button} from "antd"
+import {backgroundstyle} from "../styles/styles"
 
 export default function StudentsSignup() {
    const dispatch = useDispatch();
@@ -32,7 +33,8 @@ export default function StudentsSignup() {
     }
 
     return (
-        <div className="parentLogin" style={{marginTop:"50pt"}}>
+     <div style={backgroundstyle}>
+            <div className="ParentSignup" >
             <h1 className="head">Students Signup</h1>
             <br/>
             <Input type="text" onChange={(e)=>dispatch(NameChange(e.target.value))} placeholder="student name"/>
@@ -43,5 +45,6 @@ export default function StudentsSignup() {
             <br/>
             <Button style={{marginLeft:"auto"}} onClick={handleSubmit}>Create Student Account</Button>
         </div>
+     </div>
     )
 }

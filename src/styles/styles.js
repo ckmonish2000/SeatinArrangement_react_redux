@@ -1,2 +1,2 @@
 import BackGround from "../assets/download.jpg"
-export const backgroundstyle={backgroundImage:`url(${BackGround})`, backgroundRepeat:"no-repeat",backgroundSize:"cover",height:"100vh",width:"100vw",display:"flex"}
+export const backgroundstyle={backgroundImage:`linear-gradient(#833ab4,#dc2430,#fcb045)`, backgroundRepeat:"no-repeat",backgroundSize:"cover",height:"100vh",width:"100vw",display:"flex"}

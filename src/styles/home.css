@@ -1,0 +1,51 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&display=swap');
+
+.bg{
+    background-image: linear-gradient(#833ab4,#fcb045,#dc2430);
+    height: 100vh;
+}
+
+.navbtn{
+    margin-right: 12pt;
+    background: none;
+    border: none;
+    font-weight: bolder;
+    opacity: 0.5;
+    cursor: pointer;
+    font-size: medium;
+    transition: font-size  1s;
+    outline: none;
+}
+
+.nav{
+    position: fixed;
+    top: 0px;
+    display: flex;
+    width: 100vw;
+    justify-content: flex-end;
+    background: white;
+    padding: 10pt;
+    border-bottom-left-radius: 30pt;
+    border-bottom-right-radius: 30pt;
+    box-shadow: 1px 2px 8px 6px;
+}
+
+.navbtn:hover{
+    background: -webkit-linear-gradient(#833ab4,#fcb045,#dc2430);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 25pt;
+  opacity: 1;
+  
+}
+
+.Title{
+    position: absolute;
+    margin-top: 30vh;
+    margin-left: 33vw;
+    font-weight: bolder;
+    font-size: 100pt;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+}

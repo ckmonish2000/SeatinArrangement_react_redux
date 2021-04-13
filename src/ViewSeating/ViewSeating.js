@@ -5,6 +5,7 @@ import {SearchOutlined} from "@ant-design/icons"
 import {SearchVal,resultVal} from "../utils/actions"
 import {useSelector,useDispatch} from "react-redux"
 import {getSeating} from "../services/services"
+import "../styles/viewSeat.css"
 
 export default function ViewSeating(props) {
     const user=props.location.state.id
@@ -23,17 +24,21 @@ export default function ViewSeating(props) {
     return (
         <div>
             <Header user= {user}/>
-            <div style={{display:"flex",justifyContent:"center"}}>
-            <Input value={state} className="StudentSearch" placeholder="Exam Title" onChange={handelchange}/>
+            <div className="edge">
+            <h1 className="onedgeTitle">Instaseat</h1>
+            <div className="onedge">
+            <Input value={state} className="StudentSearch edgeField" placeholder="Exam Title" onChange={handelchange}/>
             <Tooltip title="search for your seating" placement="bottom">
-            <span style={{marginTop:"15pt",cursor:"pointer"}} onClick={onSearch}><SearchOutlined /></span>
+            <span className="edgetBtn" onClick={onSearch}><SearchOutlined /></span>
             </Tooltip>
             </div>
-           {state2.length>0?(<div>
+            </div>
+           {state2.length>0?(<div className="post">
             <h1>Exam Title: <span>{state2[0]?.exam}</span></h1>
             <h3>Class Room: <span>{state2[0]?.classRoom}</span></h3>
             <h4>Floor: <span>{state2[0]?.floor}</span></h4>
-           </div>):""}
+            <div></div>
+           </div>):(SearchVal!==""?"":"No Element")}
         </div>
     )
 }

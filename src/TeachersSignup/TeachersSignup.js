@@ -4,6 +4,7 @@ import {useDispatch,useSelector} from "react-redux"
 import {CreateNewTeacher} from "../services/services"
 import {useHistory} from "react-router-dom"
 import {message,Input,Button} from "antd"
+import {backgroundstyle} from "../styles/styles"
 
 export default function TeachersSignup() {
     const history=useHistory();
@@ -30,7 +31,8 @@ export default function TeachersSignup() {
 
     }
     return (
-        <div className="parentLogin" style={{marginTop:"50pt"}}>
+        <div style={backgroundstyle}>
+        <div className="ParentSignup" >
             <h1 className="head">Admin Signup</h1>
             <br/>
             
@@ -44,6 +46,7 @@ export default function TeachersSignup() {
 
             <Button  style={{marginLeft:"auto"}} onClick={handleSubmit}>create account</Button>
             
+        </div>
         </div>
     )
 }

@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&display=swap');
+
+.edge{
+    display: flex;
+    justify-content: center;
+    height: 27vh;
+    background-image: linear-gradient(#833ab4,#dc2430,#fcb045);
+}
+
+.onedge{
+    position: relative;
+    bottom: -21vh;
+    height: fit-content;
+    z-index: 1;
+}
+
+.edgeField{
+    padding: 10pt;
+    border-radius: 20pt;
+    box-shadow: 1px 1px 0px 0px;
+}
+
+.edgetBtn{
+    margin-top: 15pt;
+    cursor: pointer;
+    background: white;
+    padding: 10pt 12pt;
+    border-radius: 50pt;
+    box-shadow: 1px 1px 0px 0px;
+}
+
+.onedgeTitle{
+    position: absolute;
+    font-size: 84pt;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+}
+
+.post{
+    padding: 10pt;
+    width: 40vh;
+    height: 40vh;
+    border: 1px solid;
+    border-radius: 20pt;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 55pt;
+    box-shadow: 1px 1px 9px 0px;
+}

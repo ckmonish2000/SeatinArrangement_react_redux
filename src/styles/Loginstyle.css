@@ -11,6 +11,18 @@
     background: white;
 }
 
+.ParentSignup{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50vw;
+    height: 80vh;
+    margin: auto;
+    padding: 30pt;
+    /* border-radius: 20pt; */
+    box-shadow: 0px 0px 5px 2px;
+    background: white;
+}
 
 .head{
     text-align: center;
