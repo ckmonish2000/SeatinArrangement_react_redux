@@ -33,6 +33,10 @@ const ModalSClass=(val)=>{return {type:"ModalClass",payload:val}}
 
 const SearchVal=(val)=>{return {type:"Search",payload:val}}
 const resultVal=(val)=>{return {type:"SearchResult",payload:val}}
+
+const Contactnumber=(val)=>{return {type:"ContactNumber",payload:val}}
+const ContactEmail=(val)=>{return {type:"ContactEmail",payload:val}}
+
 export {
     NameChange,
     RollNoChange,
@@ -52,5 +56,7 @@ export {
    ModalSFloor,
    ModalSExam,
    SearchVal,
-   resultVal
+   resultVal,
+   Contactnumber,
+   ContactEmail
 }

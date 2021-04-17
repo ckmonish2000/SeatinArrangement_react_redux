@@ -95,4 +95,15 @@ const UpdateSearchResult=(state=[],action)=>{
 }
 
 
-export {SignupReducer,LoginRedcerStudents,TeacherSignup,LoginTeacher,OpenNewModal,ModalValues,UpdateSearch,UpdateSearchResult}
+const ContactDetails=(state={number:"",email:""},action)=>{
+    switch (action.type) {
+        case "ContactNumber":
+            return {...state,number:action.payload}
+        case "ContactEmail":
+            return {...state,email:action.payload}
+        default:
+            return state
+    }
+}
+
+export {SignupReducer,LoginRedcerStudents,TeacherSignup,LoginTeacher,OpenNewModal,ModalValues,UpdateSearch,UpdateSearchResult,ContactDetails}

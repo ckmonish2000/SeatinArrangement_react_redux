@@ -11,7 +11,8 @@ import {
   ,OpenNewModal
   ,ModalValues
   ,UpdateSearch
-  ,UpdateSearchResult
+  ,UpdateSearchResult,
+  ContactDetails
 } from "./utils/reducer"
 import {BrowserRouter} from "react-router-dom"
 
@@ -24,7 +25,8 @@ const allReducer=combineReducers({
   OpenNewModal,
   ModalValues,
   UpdateSearch,
-  UpdateSearchResult
+  UpdateSearchResult,
+  ContactDetails
 })
 
 const store=createStore(allReducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())

@@ -149,4 +149,10 @@ const getSeating=async(rollno,exam)=>{
 }
 
 
-export {createStudent,loginStudent,CreateNewTeacher,TeacherLoginService,NewSeating,getAllSeating,DeleteSeating,getSeating}
+const contactus=async(num,email)=>{
+    console.log("in fucnc");
+    var val=await axios.get(`${url}/contactus`,{params:{number:num,email:email}})
+    return val?.data
+}
+
+export {createStudent,loginStudent,CreateNewTeacher,TeacherLoginService,NewSeating,getAllSeating,DeleteSeating,getSeating,contactus}
